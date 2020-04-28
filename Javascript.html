@@ -1,0 +1,95 @@
+<script>
+
+//var mikvaotDict = google.script.run.withSuccessHandler(alert).getMikvaot();
+
+
+function chooseCity(values){
+  var select = document.getElementById("city");
+  var options = values; //Two dimensional array
+
+  for(var i = 0; i < options.length; i++) {
+    var opt = options[i];
+    var el = document.createElement("option");
+    el.textContent = opt;
+    el.value = opt;
+    select.appendChild(el);
+  }
+}
+
+google.script.run.withSuccessHandler(chooseCity)
+.getCities();
+
+
+
+function chooseMikveh(mikvaot){
+
+  var mikveh = document.getElementById('address');
+  
+  var j, L = mikveh.options.length -1;
+    for(j = L; j >= 0; j--) {  
+    mikveh.remove(j);
+    }
+
+  var cityPicked = document.getElementById('city').value;
+  var thisCityMikvaot = mikvaot[cityPicked];
+  
+  if (thisCityMikvaot == null) { 
+    var el1 = document.createElement("option");
+    el1.textContent = "Choose a mikveh";
+    el1. value = "default";
+    mikveh.appendChild(el1)
+  } else {
+    for(var i = 0; i < thisCityMikvaot.length; i++) {
+      var opt = thisCityMikvaot[i];
+      var el = document.createElement("option");
+      el.textContent = opt;
+      el.value = opt;
+      mikveh.appendChild(el);
+    }
+  }
+}
+
+
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+//(function() {
+//  'use strict';
+//  window.addEventListener('load', function() {
+//    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+//    var forms = document.getElementsByClassName('needs-validation');
+//    // Loop over them and prevent submission
+//    var validation = Array.prototype.filter.call(forms, function(form) {
+//      form.addEventListener('submit', function(event) {
+//        if (form.checkValidity() === false) {
+//          event.preventDefault();
+//          event.stopPropagation();
+//        }
+//        form.classList.add('was-validated');
+//      }, false);
+//    });
+//  }, false);
+
+
+/*
+function chooseMikveh(mikveh){
+  var selectM = document.getElementById("address");
+  var options = mikveh[0]; //Two dimensional array
+  var attrs = mikveh[1];
+
+  for(var i = 0; i < options.length; i++) {
+    var opt = options[i];
+    var val = attrs[i];
+    var el = document.createElement("option");
+    el.textContent = opt;
+    el.value = val;
+    selectM.appendChild(el);
+  }
+}
+
+google.script.run.withSuccessHandler(chooseMikveh)
+.getMikvaot();
+*/
+  
+
+
+</script>
+

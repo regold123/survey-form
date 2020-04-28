@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <?!= HtmlService.createHtmlOutputFromFile('Stylesheet').getContent(); ?>
+    <?!= HtmlService.createHtmlOutputFromFile('Javascript').getContent(); ?>
+  </head>
+  <body>
+    
+    
+  <div class="container">
+    <div class="block">
+    <h2>Mikveh Safety During Corona</h2>
+    <p>We are in the midst of a global health crisis that has implications for even the most established 
+    and assured parts of our daily routine, including mikveh. In keeping with our organizational mandate 
+    to improve the mikveh experience, and to promote the spiritual, physical and emotional health of women 
+    and the family, The Eden Center is pleased to release this early version of a crowdsourcing platform 
+    for the mikveh – a way to share our voices, to protect the health of both tovlot and attendants, and 
+    to ensure the continued safety of tevilla.</p>
+    <p>Given the challenges we are currently facing, and with women’s health and safety top priority, 
+    it’s imperative that there be transparency about the compliance of mikvaot with Ministry of Health 
+    guidelines, so that the mikveh can be a space in which women continue to feel safe. Social vigilance 
+    and mechanisms for input and feedback are key in this process.</p>
+    <p>The Eden Center crowdsourcing platform includes directed questions about matters of particular 
+    importance in the current moment, but also space for personal reflections and recommendations. 
+    We invite you to share your experiences at the mikveh – both positive and concerning –  toward 
+    empowering others to make informed choices.<br>Please use the platform “b'Emunah,” in the spirit 
+    of a female community that wants to support and protect one another, and provide mikvaot the opportunity 
+    and motivation to improve the invaluable service we’ve come to appreciate. The Eden Center will not be 
+    administering or monitoring the comments, but rather relying on women to provide trustworthy information.</p>
+    <p>Please remember that Ministry of Health guidelines are subject to change, and The Eden Center will 
+    shift our own recommendations accordingly. We know that many mikveh attendants are doing their best to 
+    stay updated in this new reality, and compliance with guidelines should be expected to evolve, so please 
+    carefully note dates on posts.</p>
+    <p><a href="https://sites.google.com/view/testsurvey422/home/results">See results so far</a></p>
+    </div>
+
+  <div>
+    <form id="test-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSd_h_a_LLxl0uxFYxHtTv1gV1yFd6beoMG9BWyvRvpl0o_vCA/formResponse" target="_self" method="POST">
+      <div class="block">
+        <h3>Please choose a mikveh</h3>
+        <div class="form-group dropd col-md-3 col-sm-5">
+          <label for="city">Choose a city:</label>
+          <select id="city" class="form-control needs-validation" name="entry.180359339" onclick="google.script.run.withSuccessHandler(chooseMikveh).getMikvaot()" required>
+            <option class="is-invalid">Choose city</option>
+          </select>
+        </div>
+      
+        <div class="form-group col-md-3 col-sm-5 dropd">
+         <label for="address">Choose a mikveh:</label>
+         <select id="address" class="form-control" name="entry.1568682454" required>
+           <option>Choose mikveh</option>
+         </select>
+        </div>
+        <small id="nomikveh" class="form-text text-muted">If you can't find your mikveh here, 
+        <a href="http://theedencenter.com/contact-us/" target="_blank">let us know.</a></small>
+      </div>
+      
+      <div class="block">
+        <h3>Making Appointments</h3>
+        <p>Is the mikveh making appointments so that women can be spaced properly to allow for cleaning, 
+        to prevent congregating outside the mikveh, and so there is a record of who was there in case 
+        there is need to inform that a corona carrier immersed?</p>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="entry.1249042837" value="yes">
+          <label class="form-check-label">
+          Yes
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="entry.1249042837" value="no">
+          <label class="form-check-label">
+          No
+          </label>
+        </div>
+      </div>
+
+      <div class="block">
+        <h3>Sick Women Can't Enter</h3>
+        <p>Are the attendants are asking people if they are sick or need to be in quarantine, or have 
+        signs clearly posted, and not allowing those who are sick or need quarantine to immerse?</p>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="entry.1849429262" value="yes">
+          <label class="form-check-label">
+          Yes
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="entry.1849429262" value="no">
+          <label class="form-check-label">
+          No
+          </label>
+        </div>
+      </div>
+      
+      <div class="block">
+        <h3>Enforcing Social Distancing</h3>
+        <p>Are the balaniot making sure to stay 2m away?</p>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="entry.679016875" value="yes">
+            <label class="form-check-label">
+            Yes
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="entry.679016875" value="no">
+            <label class="form-check-label">
+            No
+            </label>
+          </div>
+        <br>  
+        <p>Are the balaniot keeping tovlot apart?</p>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="entry.1946607949" value="yes">
+            <label class="form-check-label">
+            Yes
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="entry.1946607949" value="no">
+            <label class="form-check-label">
+            No
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="entry.1946607949" value="I don't know">
+            <label class="form-check-label">
+            I don't know
+            </label>
+          </div>
+        <br>  
+        <p>Are the balaniot not touching the tovelet or any of her belongings?</p>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="entry.1265170604" value="yes">
+            <label class="form-check-label">
+            Yes
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="entry.1265170604" value="no">
+            <label class="form-check-label">
+            No
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="entry.1265170604" value="I don't know">
+            <label class="form-check-label">
+            I don't know
+            </label>
+          </div>          
+          <br>
+          <p>How many women were in the waiting room?</p>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="entry.585604546" value="none">
+            <label class="form-check-label">
+            None
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="entry.585604546" value="Under 5">
+            <label class="form-check-label">
+            Under 5
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="entry.585604546" value="5 or more">
+            <label class="form-check-label">
+            5 or more
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="entry.585604546" value="I don't know">
+            <label class="form-check-label">
+            I don't know
+            </label>
+          </div>
+          <br>
+          <div class="form-group">
+          <label>Where do women wait if they don't have an appointment or no room is available?</label>
+          <input type="text" class="form-control" placeholder="Your answer" name="entry.1259367488" style="max-width: 500px">
+          </div>          
+      </div>
+
+      <div class="block">
+        <h3>Increased Cleaning Measures</h3>
+        <p>Are tovlot instructed to wash their hands with alcogel or soap/water upon entering and leaving?</p>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="entry.1815113625" value="yes">
+            <label class="form-check-label">
+            Yes
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="entry.1815113625" value="no">
+            <label class="form-check-label">
+            No
+            </label>
+          </div>
+        <br>  
+        <p>Are the balaniot cleaning the room very well with bleach?</p>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="entry.552606083" value="yes">
+            <label class="form-check-label">
+            Yes
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="entry.552606083" value="no">
+            <label class="form-check-label">
+            No
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="entry.552606083" value="I don't know">
+            <label class="form-check-label">
+            I don't know
+            </label>
+          </div>
+        <br>  
+        <p>Are the balaniot wiping down the rail going into the mikveh?</p>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="entry.534405377" value="yes">
+            <label class="form-check-label">
+            Yes
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="entry.534405377" value="no">
+            <label class="form-check-label">
+            No
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="entry.534405377" value="I don't know">
+            <label class="form-check-label">
+            I don't know
+            </label>
+          </div>
+      </div>
+
+      <div class="block">
+        <h3>Additional Comments</h3>
+        <div class="form-group">
+          <label for="addtlcomments">Additional comments:</label>
+          <textarea class="form-control" id="comments" rows="3" name="entry.1041822177" placeholder="Your answer"></textarea>
+        </div>
+      </div>  
+
+    <button type="submit" class="btn btn-light btn-lg submit">Submit</button>
+
+    </form>
+  </div>
+  </div>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
+
